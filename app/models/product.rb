@@ -1,3 +1,3 @@
 class Product < ApplicationRecord
-    ransacker :t_schedule, type: :integer
+    ransacker :t_schedule
 end
