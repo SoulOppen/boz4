@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+:root {
+    --color1: #A7D2CB;
+    --color2: #F2D388;
+    --color3: rgb(201, 131, 115);
+    --d-color3: rgb(150, 131, 115);
+    --color4: rgb(135, 76, 98);
+    --d-color4: rgb(95, 45, 68);
+}
+header{
+    background-color: var(--color2);
+}
+
+body{
+    background-color: var(--color1);
+}
+footer{
+    background-color: var(--color2);
+    padding: 1%;
+}
+h1{
+    color:var(--color3)
+}
+p{
+    color: var(--color4);
+}
+.color{
+    color: var(--color4);
+}
+.none{
+    list-style:none;
+}
+.btn-boz{
+    background-color: var(--color3);
+    margin-top: 1%;
+    border-radius: 20px;
+}
+.btn-boz:hover{
+    background-color:var(--d-color3);
+    border:5px;
+}
+.lk-boz{
+    color:var(--color4);
+    text-decoration: none;
+}
+.lk-boz:hover{
+    color: var(--d-color4);
+    font-style:italic;
+}  
+.sz{
+    height:150px;
+    width:100px; 
+}
+c-sz{
+    min-height:100vh;
+}

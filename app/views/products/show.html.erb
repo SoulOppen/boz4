@@ -1,0 +1,11 @@
+<h1>Mostrar</h1>
+<p style="color: green"><%= notice %></p>
+
+<%= render @product %>
+
+<div>
+  <%= link_to "Edit this product", edit_product_path(@product),class:"lk-boz" %> |
+  <%= link_to "Back to products", products_path,class:"lk-boz" %>
+
+  <%= button_to "Destroy this product", @product, method: :delete,class:"btn btn-boz" %>
+</div>

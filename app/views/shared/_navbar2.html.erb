@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand">
+  <div class="container">
+      <a class="navbar-brand lk-boz" href="<%= root_path %>">BOZ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <% unless user_signed_in? %>
+      <ul class="nav navbar-nav">
+        <li class="mx-3"><%= link_to "Registro", new_user_registration_path,class: "lk-boz" %></li>
+        <li class="mx-3"><%= link_to "Conectate", new_user_session_path,class: "lk-boz" %></li>
+      </ul>      
+      <% end %>
+      </div>
+      <div class="align-items-end">
+      <% if user_signed_in? %>
+      <ul class="nav navbar-nav">
+      <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-circle-o " style="font-size:24px""></i>
+          </a>
+             <!-- ¡Pending implementation! Should work toggling between sign_in and sign_out -->
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="dropdown-item"><%=link_to 'Nuevo producto', new_product_path,class: "lk-boz" %></li>
+            <li class="dropdown-item"><%=link_to 'Mis productos', products_path,class: "lk-boz" %></li>
+            <li class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete,class: "lk-boz"%></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>

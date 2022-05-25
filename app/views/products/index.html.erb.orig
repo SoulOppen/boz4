@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Productos</h1>
+
+<%= link_to "Crear Producto", new_product_path,class:"lk-boz"%>
+
+<div class="col-10 d-flex justify-content-end w-100">
+        <%= search_form_for @q do |f|%>
+            <%= f.label :t_schedule%>
+            <%= f.search_field :t_schedule_eq%>
+            <%= f.submit "Buscar", class:"btn btn-boz"%>
+        <%end%>
+</div>
+
+
+<div class="row justify-content-center" id="products">
+
+    <% @products.each do |product| %>
+    <div class="card col-5 mx-3 my-4">
+      <%= render product %>
+      <p>
+      <%= link_to "Show this product", product,class:"lk-boz" %>
+      </p>
+    </div>
+  <% end %>
+  <div class="items-allign-center">
+  <%= paginate(@products) %>
+  </div>
+</div>
+
+<%= link_to "New product", new_product_path,class:"lk-boz"%>
