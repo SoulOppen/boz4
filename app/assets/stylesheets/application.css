@@ -27,10 +27,16 @@ header{
 
 body{
     background-color: var(--color1);
+    position: relative;
+    padding-bottom: 6em;
+    min-height:100vh;
 }
 footer{
     background-color: var(--color2);
     padding: 1%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 h1{
     color:var(--color3)
