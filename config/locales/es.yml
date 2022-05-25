@@ -4,6 +4,7 @@ es:
   activerecord:
     models:
       product: "Producto"
+      user: "Usuarios"
     attributes:
       product:
         name: "Nombre"
@@ -13,6 +14,8 @@ es:
         t_schedule: "Agenda"
         stock: "Stock"
         img_url: "[URL] Foto Portada"
+      user:
+        role: "Rol"
     errors:
       messages:
         record_invalid: 'La validación falló: %{errors}'

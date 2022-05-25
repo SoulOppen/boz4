@@ -67,9 +67,13 @@
                         <td class="align-middle text-center">
                           <%= link_to "Mostrar", prod, class: "lk-boz" %>
                         </td> 
+                        <% if can? :update, prod %>
                         <td class="align-middle text-center">
-                          <%= link_to "Editar", edit_product_path(prod),class:"lk-boz" %> 
-                        </td> 
+                            
+                                <%= link_to "Editar", edit_product_path(prod), class:"lk-boz" %> 
+                            
+                        </td>
+                        
 
 
                         <td class="align-middle">
@@ -79,8 +83,8 @@
     
                                 <%= button_to "Eliminar", product_path(prod), method: :delete, class: "btn btn-boz btn-sm", data: { confirm: "Are you sure?" }, :html => { :method => :delete, :remote => true}, onclick: "return confirmDestroy('Seguro que desea eliminar el Producto seleccionado?')"%>
 
-                         </td>
-
+                            </td>
+                        <%end%> 
                     </tr>
                     <% end %>
             </tbody>

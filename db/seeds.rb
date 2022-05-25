@@ -24,7 +24,8 @@ puts "Poblando Datos..."
 		cost: cost,
 		t_schedule: rand(2..6),
 		stock: rand(1..10),
-		img_url: "https://loremflickr.com/#{rand(50..200)}/#{rand(50..200)}/all"
+		img_url: "https://loremflickr.com/#{rand(50..200)}/#{rand(50..200)}/all",
+		user_id: 1
   	)
 end
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
