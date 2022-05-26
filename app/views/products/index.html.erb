@@ -5,7 +5,12 @@
  
 <div class="row">
     <div class="col-7">
-        <%= link_to "New product", new_product_path, class:"btn btn-boz  justify-content-start col-2 "%>
+
+        <%if current_user.role=="seller"%>
+               
+                <%= link_to "New product", new_product_path, class:"btn btn-boz  justify-content-start col-2 "%>
+        <%else%>
+        <%end%>
     </div>
     <div class="col-5 d-flex justify-content-end ">
 
@@ -69,20 +74,20 @@
                         </td> 
                         <% if can? :update, prod %>
                         <td class="align-middle text-center">
-                            
+                            <%if prod.user_id==current_user.id%>
                                 <%= link_to "Editar", edit_product_path(prod), class:"lk-boz" %> 
-                            
+                            <%end%>
                         </td>
                         
 
 
                         <td class="align-middle">
-    
+                            <%if prod.user_id==current_user.id%>
                                 <!-- Protección CSRF -->
                                 <%= token_tag nil %> 
     
                                 <%= button_to "Eliminar", product_path(prod), method: :delete, class: "btn btn-boz btn-sm", data: { confirm: "Are you sure?" }, :html => { :method => :delete, :remote => true}, onclick: "return confirmDestroy('Seguro que desea eliminar el Producto seleccionado?')"%>
-
+                            <%end%>
                             </td>
                         <%end%> 
                     </tr>
