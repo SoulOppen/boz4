@@ -54,6 +54,7 @@ p{
     background-color: var(--color3);
     margin-top: 1%;
     border-radius: 20px;
+    text-transform: uppercase;
 }
 .btn-boz:hover{
     background-color:var(--d-color3);
@@ -62,6 +63,7 @@ p{
 .lk-boz{
     color:var(--color4);
     text-decoration: none;
+    text-transform: capitalize;
 }
 .lk-boz:hover{
     color: var(--d-color4);

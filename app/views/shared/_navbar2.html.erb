@@ -14,13 +14,13 @@
       </div>
       <div class="align-items-end">
       <% if user_signed_in? %>
-      <div>
+      <div class="color">
         <%=current_user.email%>
       </div>
       <ul class="nav navbar-nav">
       <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-user-circle-o " style="font-size:24px""></i>
+          <a href="#" class="nav-link dropdown-toggle color" data-bs-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-circle-o color" style="font-size:24px""></i>
           </a>
              <!-- ¡Pending implementation! Should work toggling between sign_in and sign_out -->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
