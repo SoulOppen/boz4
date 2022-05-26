@@ -28877,3 +28877,44 @@ Processing by ProductsController#index as TURBO_STREAM
 Completed 200 OK in 93ms (Views: 79.2ms | ActiveRecord: 2.0ms | Allocations: 30461)
 
 
+Started GET "/" for ::1 at 2022-05-25 16:55:03 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:23
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:42
+  Rendered products/index.html.erb within layouts/application (Duration: 48.2ms | Allocations: 24961)
+  Rendered shared/_navbar2.html.erb (Duration: 0.3ms | Allocations: 159)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 70.8ms | Allocations: 28320)
+Completed 200 OK in 83ms (Views: 71.3ms | ActiveRecord: 2.0ms | Allocations: 30181)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-05-25 16:56:10 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 302 Found in 18ms (ActiveRecord: 0.7ms | Allocations: 3223)
+
+
+Started GET "/" for ::1 at 2022-05-25 16:56:10 -0400
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 291)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-25 16:56:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 166)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1418)
+  Rendered shared/_navbar2.html.erb (Duration: 0.5ms | Allocations: 168)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 4800)
+Completed 200 OK in 39ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 5564)
+
+
