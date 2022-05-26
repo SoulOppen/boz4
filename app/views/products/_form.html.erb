@@ -11,44 +11,53 @@
     </div>
   <% end %>
   <div>
-    <%= form.hidden_field :user_id, value: current_user.id%>
-  </div>
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+    <div>
+      <%= form.hidden_field :user_id, value: current_user.id%>
+    </div>
+    <div>
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div>
-    <%= form.label :desciption, style: "display: block" %>
-    <%= form.text_area :desciption %>
-  </div>
+    <div>
+      <%= form.label :desciption, style: "display: block" %>
+      <%= form.text_area :desciption %>
+    </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price %>
-  </div>
+    <div>
+      <%= form.label :price, style: "display: block" %>
+      <%= form.number_field :price %>
+    </div>
 
-  <div>
-    <%= form.label :cost, style: "display: block" %>
-    <%= form.number_field :cost %>
-  </div>
+    <div>
+      <%= form.label :cost, style: "display: block" %>
+      <%= form.number_field :cost %>
+    </div>
 
-  <div>
-    <%= form.label :t_schedule, style: "display: block" %>
-    <%= form.number_field :t_schedule %>
-  </div>
+    <div>
+      <%= form.label :t_schedule, style: "display: block" %>
+      <%= form.number_field :t_schedule %>
+    </div>
 
-  <div>
-    <%= form.label :stock, style: "display: block" %>
-    <%= form.number_field :stock %>
-  </div>
+    <div>
+      <%= form.label :stock, style: "display: block" %>
+      <%= form.number_field :stock %>
+    </div>
 
-  <div>
-    <%= form.label :img_url, style: "display: block" %>
-    <%= form.text_field :img_url %>
-  </div>
-
-  <div>
-    <%= form.submit "enviar" , class:"btn btn-boz"%>
+    <div>
+      <%= form.label :img_url, style: "display: block" %>
+      <%= form.text_field :img_url %>
+    </div>
+    <div>
+      <%= form.fields_for :categories do |ff| %>
+        <%= render "category_fields", :f => ff %>
+      <%end%>
+    </div>
+    <div>
+      <%= link_to_add_association 'Añadir categorias', form, :categories %>
+    </div>
+    <div>
+      <%= form.submit "enviar" , class:"btn btn-boz"%>
+    </div>
   </div>
 <% end %>

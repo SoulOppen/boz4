@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @product.categories.build 
     
   end
 
@@ -69,6 +70,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :desciption, :price, :cost, :t_schedule, :stock, :img_url, :user_id)
+      params.require(:product).permit(:name, :desciption, :price, :cost, :t_schedule, :stock, :img_url, :user_id, categories_attributes: [:id, :name, :description,:_destroy])
     end
 end
