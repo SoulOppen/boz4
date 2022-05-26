@@ -35954,3 +35954,413 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 111ms (Views: 98.5ms | ActiveRecord: 1.9ms | Allocations: 29522)
 
 
+Started GET "/" for ::1 at 2022-05-26 17:45:47 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (8.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 112ms (ActiveRecord: 0.0ms | Allocations: 3086)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-26 17:45:53 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 65.1ms | Allocations: 953)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 355.3ms | Allocations: 5085)
+  Rendered shared/_navbar2.html.erb (Duration: 62.3ms | Allocations: 2280)
+  Rendered layout layouts/application.html.erb (Duration: 2597.2ms | Allocations: 78324)
+Completed 500 Internal Server Error in 3124ms (ActiveRecord: 157.8ms | Allocations: 89079)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar navbar-expand">
+  <div class="container">
+      <a class="navbar-brand lk-boz" href="<%= root_path %>">BOZ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <% unless user_signed_in? %>
+      <ul class="nav navbar-nav">
+        <li class="mx-3"><%= link_to "Registro", new_user_registration_path,class: "lk-boz" %></li>
+        <li class="mx-3"><%= link_to "Conectate", new_user_session_path,class: "lk-boz" %></li>
+      </ul>      
+      <% end %>
+      </div>
+      <div class="align-items-end">
+      <% if user_signed_in? %>
+      <div>
+        <%=current_user.email, class:"color"%>
+      </div>
+      <ul class="nav navbar-nav">
+      <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-circle-o color" style="font-size:24px""></i>
+          </a>
+             <!-- ¡Pending implementation! Should work toggling between sign_in and sign_out -->
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="dropdown-item"><%=link_to 'Nuevo producto', new_product_path,class: "lk-boz" %></li>
+            <li class="dropdown-item"><%=link_to 'Mis productos', products_path,class: "lk-boz" %></li>
+            <li class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete,class: "lk-boz"%></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>
+
+):
+1:    <nav class="navbar navbar-expand">
+2:      <div class="container">
+3:          <a class="navbar-brand lk-boz" href="<%= root_path %>">BOZ</a>
+4:          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+5:          <span class="navbar-toggler-icon"></span>
+6:        </button>
+7:        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+8:          <% unless user_signed_in? %>
+9:          <ul class="nav navbar-nav">
+10:            <li class="mx-3"><%= link_to "Registro", new_user_registration_path,class: "lk-boz" %></li>
+11:            <li class="mx-3"><%= link_to "Conectate", new_user_session_path,class: "lk-boz" %></li>
+12:          </ul>      
+13:          <% end %>
+14:          </div>
+15:          <div class="align-items-end">
+16:          <% if user_signed_in? %>
+17:          <div>
+18:            <%=current_user.email, class:"color"%>
+19:          </div>
+20:          <ul class="nav navbar-nav">
+21:          <li class="nav-item dropdown">
+22:              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+23:                <i class="fa fa-user-circle-o color" style="font-size:24px""></i>
+24:              </a>
+25:                 <!-- ¡Pending implementation! Should work toggling between sign_in and sign_out -->
+26:              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+27:                <li class="dropdown-item"><%=link_to 'Nuevo producto', new_product_path,class: "lk-boz" %></li>
+28:                <li class="dropdown-item"><%=link_to 'Mis productos', products_path,class: "lk-boz" %></li>
+29:                <li class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete,class: "lk-boz"%></li>
+30:              </ul>
+31:            </li>
+32:          </ul>
+33:          <% end %>
+34:        </div>
+35:      </div>
+36:    </nav>
+  
+app/views/shared/_navbar2.html.erb:18: syntax error, unexpected label, expecting '='
+app/views/shared/_navbar2.html.erb:18: syntax error, unexpected label, expecting '='
+app/views/shared/_navbar2.html.erb:18: syntax error, unexpected label, expecting '='
+app/views/shared/_navbar2.html.erb:18: syntax error, unexpected label, expecting '='
+app/views/shared/_navbar2.html.erb:18: syntax error, unexpected label, expecting '='
+app/views/shared/_navbar2.html.erb:18: syntax error, unexpected label, expecting '='
+app/views/layouts/application.html.erb:18
+Started GET "/users/sign_in" for ::1 at 2022-05-26 17:47:43 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 621)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2538)
+  Rendered shared/_navbar2.html.erb (Duration: 2.6ms | Allocations: 583)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 7145)
+Completed 200 OK in 78ms (Views: 71.6ms | ActiveRecord: 0.0ms | Allocations: 9030)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-26 17:48:15 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"carpediem@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (20.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "carpediem@example.com"], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 302 Found in 678ms (ActiveRecord: 20.8ms | Allocations: 6917)
+
+
+Started GET "/" for ::1 at 2022-05-26 17:48:16 -0400
+Processing by ProductsController#index as TURBO_STREAM
+  [1m[36mUser Load (50.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (106.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (62.9ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 875.5ms | Allocations: 38335)
+  Rendered shared/_navbar2.html.erb (Duration: 0.3ms | Allocations: 183)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 897.5ms | Allocations: 41915)
+Completed 200 OK in 1038ms (Views: 738.2ms | ActiveRecord: 224.5ms | Allocations: 45876)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-26 17:50:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms | Allocations: 1852)
+
+
+Started GET "/" for ::1 at 2022-05-26 17:50:12 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 85.3ms | Allocations: 27387)
+  Rendered shared/_navbar2.html.erb (Duration: 2.0ms | Allocations: 533)
+  Rendered shared/_footer.html.erb (Duration: 2.6ms | Allocations: 176)
+  Rendered layout layouts/application.html.erb (Duration: 118.2ms | Allocations: 31915)
+Completed 200 OK in 150ms (Views: 134.4ms | ActiveRecord: 2.0ms | Allocations: 34753)
+
+
+Started GET "/" for ::1 at 2022-05-26 17:51:59 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 68.0ms | Allocations: 27393)
+  Rendered shared/_navbar2.html.erb (Duration: 2.0ms | Allocations: 533)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 183)
+  Rendered layout layouts/application.html.erb (Duration: 101.2ms | Allocations: 31900)
+Completed 200 OK in 134ms (Views: 118.4ms | ActiveRecord: 1.8ms | Allocations: 34813)
+
+
+Started GET "/" for ::1 at 2022-05-26 17:54:13 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 48.2ms | Allocations: 24858)
+  Rendered shared/_navbar2.html.erb (Duration: 0.3ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 1887.0ms | Allocations: 34162)
+Completed 200 OK in 1900ms (Views: 1887.3ms | ActiveRecord: 1.8ms | Allocations: 36140)
+
+
+Started GET "/" for ::1 at 2022-05-26 17:56:00 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 73.7ms | Allocations: 27385)
+  Rendered shared/_navbar2.html.erb (Duration: 2.2ms | Allocations: 533)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 183)
+  Rendered layout layouts/application.html.erb (Duration: 106.4ms | Allocations: 31889)
+Completed 200 OK in 136ms (Views: 121.6ms | ActiveRecord: 1.6ms | Allocations: 34655)
+
+
+Started GET "/" for ::1 at 2022-05-26 17:56:47 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 68.0ms | Allocations: 27385)
+  Rendered shared/_navbar2.html.erb (Duration: 2.0ms | Allocations: 533)
+  Rendered shared/_footer.html.erb (Duration: 2.0ms | Allocations: 183)
+  Rendered layout layouts/application.html.erb (Duration: 102.0ms | Allocations: 31889)
+Completed 200 OK in 134ms (Views: 119.4ms | ActiveRecord: 1.6ms | Allocations: 34781)
+
+
+Started GET "/products/22" for ::1 at 2022-05-26 17:57:20 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 93.9ms | Allocations: 867)
+  Rendered products/show.html.erb within layouts/application (Duration: 1013.5ms | Allocations: 9127)
+  Rendered shared/_navbar2.html.erb (Duration: 0.3ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 1037.3ms | Allocations: 12601)
+Completed 200 OK in 1058ms (Views: 1039.0ms | ActiveRecord: 1.1ms | Allocations: 15866)
+
+
+Started GET "/" for ::1 at 2022-05-26 18:03:17 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (3.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 70.1ms | Allocations: 27429)
+  Rendered shared/_navbar2.html.erb (Duration: 2.1ms | Allocations: 534)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 183)
+  Rendered layout layouts/application.html.erb (Duration: 102.9ms | Allocations: 31958)
+Completed 200 OK in 281ms (Views: 115.1ms | ActiveRecord: 27.3ms | Allocations: 37381)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-05-26 18:07:05 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 302 Found in 307ms (ActiveRecord: 0.4ms | Allocations: 9719)
+
+
+Started GET "/" for ::1 at 2022-05-26 18:07:05 -0400
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-26 18:07:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 620)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2538)
+  Rendered shared/_navbar2.html.erb (Duration: 0.8ms | Allocations: 202)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 6147)
+Completed 200 OK in 75ms (Views: 68.5ms | ActiveRecord: 0.0ms | Allocations: 7742)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-26 18:07:18 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"carpediem@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "carpediem@example.com"], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 302 Found in 427ms (ActiveRecord: 0.4ms | Allocations: 3154)
+
+
+Started GET "/" for ::1 at 2022-05-26 18:07:19 -0400
+Processing by ProductsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 54.0ms | Allocations: 25023)
+  Rendered shared/_navbar2.html.erb (Duration: 0.4ms | Allocations: 164)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 87.2ms | Allocations: 28391)
+Completed 200 OK in 101ms (Views: 87.9ms | ActiveRecord: 1.5ms | Allocations: 30305)
+
+
+Started GET "/" for ::1 at 2022-05-26 18:08:19 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 46.5ms | Allocations: 24858)
+  Rendered shared/_navbar2.html.erb (Duration: 0.3ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 81.4ms | Allocations: 28241)
+Completed 200 OK in 96ms (Views: 82.1ms | ActiveRecord: 1.7ms | Allocations: 30075)
+
+
+Started GET "/" for ::1 at 2022-05-26 18:22:12 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (4.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 126.5ms | Allocations: 32209)
+  Rendered shared/_navbar2.html.erb (Duration: 2.6ms | Allocations: 539)
+  Rendered shared/_footer.html.erb (Duration: 1.9ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 471.9ms | Allocations: 58242)
+Completed 200 OK in 692ms (Views: 489.5ms | ActiveRecord: 27.8ms | Allocations: 69603)
+
+
+Started GET "/products/22" for ::1 at 2022-05-26 18:27:08 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 2.3ms | Allocations: 838)
+  Rendered products/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1788)
+  Rendered shared/_navbar2.html.erb (Duration: 2.3ms | Allocations: 539)
+  Rendered shared/_footer.html.erb (Duration: 2.0ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 6342)
+Completed 200 OK in 82ms (Views: 63.0ms | ActiveRecord: 0.8ms | Allocations: 10421)
+
+
+Started GET "/products/22" for ::1 at 2022-05-26 18:27:56 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 1.1ms | Allocations: 424)
+  Rendered products/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 872)
+  Rendered shared/_navbar2.html.erb (Duration: 1.2ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 4270)
+Completed 200 OK in 50ms (Views: 35.6ms | ActiveRecord: 0.9ms | Allocations: 6891)
+
+
+Started GET "/products/22/edit" for ::1 at 2022-05-26 18:29:01 -0400
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 385.9ms | Allocations: 11564)
+  Rendered products/edit.html.erb within layouts/application (Duration: 410.0ms | Allocations: 12005)
+  Rendered shared/_navbar2.html.erb (Duration: 0.4ms | Allocations: 165)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 434.5ms | Allocations: 15544)
+Completed 200 OK in 454ms (Views: 436.3ms | ActiveRecord: 1.0ms | Allocations: 17891)
+
+
+Started GET "/" for ::1 at 2022-05-26 18:29:29 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 67.2ms | Allocations: 27035)
+  Rendered shared/_navbar2.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 90.9ms | Allocations: 30433)
+Completed 200 OK in 106ms (Views: 91.4ms | ActiveRecord: 1.8ms | Allocations: 32641)
+
+
+  [1m[35m (25.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20220526223843)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1030.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (44.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220526223843"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

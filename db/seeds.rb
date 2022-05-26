@@ -28,4 +28,5 @@ puts "Poblando Datos..."
 		user_id: 1
   	)
 end
-#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# Esto no es lo mejor solo para efectos de pruebas
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
