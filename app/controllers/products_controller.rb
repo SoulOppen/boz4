@@ -7,10 +7,7 @@ class ProductsController < ApplicationController
     @q=Product.ransack(params[:q])
     @products=@q.result(distinct:true).page(params[:page]).per(20)
   end
-  def mis_prod
-    @q=Product.ransack(params[:q])
-    @products=@q.result(distinct:true).page(params[:page]).per(20)
-  end
+  
 
   # GET /products/1 or /products/1.json
   def show
