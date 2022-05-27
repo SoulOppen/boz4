@@ -39321,3 +39321,236 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 95ms (Views: 74.9ms | ActiveRecord: 2.6ms | Allocations: 11845)
 
 
+Started GET "/users/sign_out" for ::1 at 2022-05-27 11:12:51 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mAdminUser Load (4.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 302 Found in 248ms (ActiveRecord: 29.1ms | Allocations: 7076)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:12:52 -0400
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 370)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-27 11:12:52 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 14.6ms | Allocations: 637)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 76.9ms | Allocations: 2573)
+  Rendered shared/_navbar2.html.erb (Duration: 2.6ms | Allocations: 599)
+  Rendered shared/_footer.html.erb (Duration: 1.8ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 110.4ms | Allocations: 7210)
+Completed 200 OK in 159ms (Views: 149.0ms | ActiveRecord: 0.0ms | Allocations: 9037)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-27 11:13:02 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"super@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "super@gmail.com"], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 302 Found in 404ms (ActiveRecord: 0.7ms | Allocations: 3185)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:13:03 -0400
+Processing by ProductsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (5.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 87.8ms | Allocations: 19552)
+  Rendered shared/_navbar2.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 114.7ms | Allocations: 23132)
+Completed 200 OK in 153ms (Views: 125.9ms | ActiveRecord: 6.5ms | Allocations: 25770)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:13:30 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 64.9ms | Allocations: 19403)
+  Rendered shared/_navbar2.html.erb (Duration: 6.6ms | Allocations: 494)
+  Rendered shared/_footer.html.erb (Duration: 1.9ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 105.9ms | Allocations: 23953)
+Completed 200 OK in 140ms (Views: 124.3ms | ActiveRecord: 1.6ms | Allocations: 26829)
+
+
+Started GET "/products?page=2" for ::1 at 2022-05-27 11:14:00 -0400
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 40.5ms | Allocations: 8111)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 8193)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 1.6ms | Allocations: 10149)
+
+
+  
+ActionView::Template::Error (The asset "Postres" is not present in the asset pipeline.
+):
+    47:                 <% @products.each do |prod| %>
+    48:                     <tr>    
+    49:                         <td class="align-middle text-center" >
+    50:                             <%= image_tag(prod.img_url, size: "60x60") %>    
+    51:                         </td>
+    52:                         <td class="align-middle text-center">
+    53:                             <h6><strong><%= prod.name %><h6>
+  
+app/views/products/index.html.erb:50
+app/views/products/index.html.erb:47
+Started GET "/admin/products" for ::1 at 2022-05-27 11:14:22 -0400
+Processing by Admin::ProductsController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 375)
+
+
+Started GET "/admin/login" for ::1 at 2022-05-27 11:14:22 -0400
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/devise/shared/_links.erb (Duration: 2.6ms | Allocations: 609)
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 18.4ms | Allocations: 7352)
+  Rendered layout C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 117.0ms | Allocations: 23379)
+Completed 200 OK in 186ms (Views: 175.7ms | ActiveRecord: 0.0ms | Allocations: 24828)
+
+
+Started POST "/admin/login" for ::1 at 2022-05-27 11:14:25 -0400
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/admin/products
+Completed 302 Found in 428ms (ActiveRecord: 0.5ms | Allocations: 3295)
+
+
+Started GET "/admin/products" for ::1 at 2022-05-27 11:14:26 -0400
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/resource/index.html.arb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProduct Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mMFeature Load (2.9ms)[0m  [1m[34mSELECT "m_features".* FROM "m_features"[0m
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/resource/index.html.arb (Duration: 1138.8ms | Allocations: 193194)
+Completed 200 OK in 1171ms (Views: 1148.3ms | ActiveRecord: 10.9ms | Allocations: 196059)
+
+
+Started DELETE "/admin/products/98" for ::1 at 2022-05-27 11:14:51 -0400
+Processing by Admin::ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"98"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."product_id" = $1[0m  [["product_id", 98]]
+  [1m[36mMFeature Load (0.4ms)[0m  [1m[34mSELECT "m_features".* FROM "m_features" WHERE "m_features"."product_id" = $1[0m  [["product_id", 98]]
+  [1m[36mProduct Destroy (99.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 98]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://[::1]:3000/admin/products
+Completed 302 Found in 195ms (ActiveRecord: 103.8ms | Allocations: 9985)
+
+
+Started GET "/admin/products" for ::1 at 2022-05-27 11:14:51 -0400
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/resource/index.html.arb
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProduct Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mMFeature Load (0.4ms)[0m  [1m[34mSELECT "m_features".* FROM "m_features"[0m
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/resource/index.html.arb (Duration: 504.4ms | Allocations: 180146)
+Completed 200 OK in 578ms (Views: 561.4ms | ActiveRecord: 4.8ms | Allocations: 182211)
+
+
+Started GET "/products?page=2" for ::1 at 2022-05-27 11:14:56 -0400
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 34.6ms | Allocations: 17307)
+  Rendered shared/_navbar2.html.erb (Duration: 0.3ms | Allocations: 90)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 60.9ms | Allocations: 20697)
+Completed 200 OK in 122ms (Views: 61.4ms | ActiveRecord: 1.9ms | Allocations: 22645)
+
+
