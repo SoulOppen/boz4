@@ -36444,3 +36444,998 @@ FOREIGN KEY ("product_id")
   [1m[36mActiveRecord::InternalMetadata Load (3.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products/new" for ::1 at 2022-05-26 19:04:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 200.1ms | Allocations: 14610)
+  Rendered products/new.html.erb within layouts/application (Duration: 201.2ms | Allocations: 14714)
+  Rendered layout layouts/application.html.erb (Duration: 202.4ms | Allocations: 14802)
+Completed 500 Internal Server Error in 265ms (ActiveRecord: 16.0ms | Allocations: 25646)
+
+
+  
+ActionView::Template::Error (Missing partial products/_category_fields, application/_category_fields with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/AOppen/Documents/GitHub/Trabajo/Curso/rails/boz4-master/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bootstrap4-kaminari-views-1.0.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/kaminari-core-1.2.2/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  products/form
+               products/product
+               kaminari/next_page
+               kaminari/prev_page
+               kaminari/paginator
+               kaminari/last_page):
+    48:     <%= form.text_field :img_url %>
+    49:   </div>
+    50:     <div>
+    51:       <%= link_to_add_association 'Añadir categorias', form, :categories %>
+    52:     </div>
+    53: 
+    54:     <div>
+  
+app/views/products/_form.html.erb:51
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:3
+Started GET "/products/new" for ::1 at 2022-05-26 19:07:26 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 170.6ms | Allocations: 10248)
+  Rendered products/new.html.erb within layouts/application (Duration: 175.8ms | Allocations: 10600)
+  Rendered layout layouts/application.html.erb (Duration: 177.5ms | Allocations: 10688)
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 0.4ms | Allocations: 13414)
+
+
+  
+ActionView::Template::Error (Missing partial products/_category_fields, application/_category_fields with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/AOppen/Documents/GitHub/Trabajo/Curso/rails/boz4-master/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bootstrap4-kaminari-views-1.0.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/kaminari-core-1.2.2/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  products/categories_fields
+               products/form
+               products/product
+               kaminari/next_page
+               kaminari/prev_page
+               kaminari/paginator):
+    48:     <%= form.text_field :img_url %>
+    49:   </div>
+    50:     <div>
+    51:       <%= link_to_add_association 'Añadir categorias', form, :categories %>
+    52:     </div>
+    53: 
+    54:     <div>
+  
+app/views/products/_form.html.erb:51
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:3
+Started GET "/products/new" for ::1 at 2022-05-26 19:10:17 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 145.0ms | Allocations: 9172)
+  Rendered products/new.html.erb within layouts/application (Duration: 146.6ms | Allocations: 9267)
+  Rendered layout layouts/application.html.erb (Duration: 148.2ms | Allocations: 9355)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 15.0ms | Allocations: 23934)
+
+
+  
+ActionView::Template::Error (Missing partial products/_category_fields, application/_category_fields with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/AOppen/Documents/GitHub/Trabajo/Curso/rails/boz4-master/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bootstrap4-kaminari-views-1.0.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/kaminari-core-1.2.2/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  products/categories_fields
+               products/form
+               products/product
+               kaminari/next_page
+               kaminari/prev_page
+               kaminari/paginator):
+    48:     <%= form.text_field :img_url %>
+    49:   </div>
+    50:     <div>
+    51:       <%= link_to_add_association 'Añadir categorias', form, :categories %>
+    52:     </div>
+    53: 
+    54:     <div>
+  
+app/views/products/_form.html.erb:51
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:3
+Started GET "/products/new" for ::1 at 2022-05-26 19:12:59 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_categories_fields.html.erb (Duration: 3.2ms | Allocations: 670)
+  Rendered products/_form.html.erb (Duration: 176.1ms | Allocations: 11027)
+  Rendered products/new.html.erb within layouts/application (Duration: 181.1ms | Allocations: 11378)
+  Rendered layout layouts/application.html.erb (Duration: 183.1ms | Allocations: 11466)
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 0.3ms | Allocations: 14426)
+
+
+  
+ActionView::Template::Error (Missing partial products/_category_fields, application/_category_fields with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/AOppen/Documents/GitHub/Trabajo/Curso/rails/boz4-master/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bootstrap4-kaminari-views-1.0.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/kaminari-core-1.2.2/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  products/categories_fields
+               products/form
+               products/product
+               kaminari/next_page
+               kaminari/prev_page
+               kaminari/paginator):
+    53:             <%end%>
+    54:         </div>
+    55:     <div>
+    56:       <%= link_to_add_association 'Añadir categorias', form, :categories %>
+    57:     </div>
+    58: 
+    59:     <div>
+  
+app/views/products/_form.html.erb:56
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:3
+Started GET "/products/new" for ::1 at 2022-05-26 19:16:02 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_categories_fields.html.erb (Duration: 2.0ms | Allocations: 612)
+  Rendered products/_form.html.erb (Duration: 173.8ms | Allocations: 10913)
+  Rendered products/new.html.erb within layouts/application (Duration: 178.7ms | Allocations: 11264)
+  Rendered layout layouts/application.html.erb (Duration: 180.1ms | Allocations: 11352)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.3ms | Allocations: 14308)
+
+
+  
+ActionView::Template::Error (Missing partial products/_category_fields, application/_category_fields with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/AOppen/Documents/GitHub/Trabajo/Curso/rails/boz4-master/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bootstrap4-kaminari-views-1.0.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/kaminari-core-1.2.2/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  products/categories_fields
+               products/form
+               products/product
+               kaminari/next_page
+               kaminari/prev_page
+               kaminari/paginator):
+    53:     <%end%>
+    54:   </div>
+    55:   <div>
+    56:     <%= link_to_add_association 'Añadir categorias', form, :categories %>
+    57:   </div>
+    58:   <div>
+    59:     <%= form.submit "enviar" , class:"btn btn-boz"%>
+  
+app/views/products/_form.html.erb:56
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:3
+Started GET "/products/new" for ::1 at 2022-05-26 19:18:58 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_categories_fields.html.erb (Duration: 2.3ms | Allocations: 612)
+  Rendered products/_form.html.erb (Duration: 13.4ms | Allocations: 3745)
+  Rendered products/new.html.erb within layouts/application (Duration: 18.7ms | Allocations: 4138)
+  Rendered shared/_navbar2.html.erb (Duration: 3.1ms | Allocations: 543)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 143.5ms | Allocations: 27142)
+Completed 200 OK in 178ms (Views: 163.4ms | ActiveRecord: 0.3ms | Allocations: 30136)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 19:20:32 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_categories_fields.html.erb (Duration: 2.8ms | Allocations: 701)
+  Rendered products/_form.html.erb (Duration: 12.7ms | Allocations: 3821)
+  Rendered products/new.html.erb within layouts/application (Duration: 18.6ms | Allocations: 4214)
+  Rendered shared/_navbar2.html.erb (Duration: 2.0ms | Allocations: 537)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 56.6ms | Allocations: 8799)
+Completed 200 OK in 93ms (Views: 75.9ms | ActiveRecord: 0.3ms | Allocations: 11800)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 19:24:37 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_categories_fields.html.erb (Duration: 2.7ms | Allocations: 650)
+  Rendered products/_form.html.erb (Duration: 167.6ms | Allocations: 10952)
+  Rendered products/new.html.erb within layouts/application (Duration: 172.6ms | Allocations: 11303)
+  Rendered layout layouts/application.html.erb (Duration: 173.9ms | Allocations: 11391)
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.3ms | Allocations: 14350)
+
+
+  
+ActionView::Template::Error (Missing partial products/_category_fields, application/_category_fields with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/AOppen/Documents/GitHub/Trabajo/Curso/rails/boz4-master/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bootstrap4-kaminari-views-1.0.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/kaminari-core-1.2.2/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  products/categories_fields
+               products/form
+               products/product
+               kaminari/next_page
+               kaminari/prev_page
+               kaminari/paginator):
+    54:       <%end%>
+    55:     </div>
+    56:     <div>
+    57:       <%= link_to_add_association 'Añadir categorias', form, :categories %>
+    58:     </div>
+    59:     <div>
+    60:       <%= form.submit "enviar" , class:"btn btn-boz"%>
+  
+app/views/products/_form.html.erb:57
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:3
+Started GET "/products/new" for ::1 at 2022-05-26 19:26:22 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 211.8ms | Allocations: 9870)
+  Rendered products/new.html.erb within layouts/application (Duration: 218.2ms | Allocations: 10222)
+  Rendered layout layouts/application.html.erb (Duration: 220.9ms | Allocations: 10310)
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 0.3ms | Allocations: 13236)
+
+
+  
+ActionView::Template::Error (Missing partial products/_categories_fields, application/_categories_fields with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/AOppen/Documents/GitHub/Trabajo/Curso/rails/boz4-master/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bootstrap4-kaminari-views-1.0.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/kaminari-core-1.2.2/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  products/category_fields
+               products/form
+               products/product
+               kaminari/first_page
+               kaminari/next_page
+               kaminari/last_page):
+    50:     </div>
+    51:     <div>
+    52:       <%= form.fields_for :categories do |ff| %>
+    53:         <%= render "categories_fields", :f => ff %>
+    54:       <%end%>
+    55:     </div>
+    56:     <div>
+  
+app/views/products/_form.html.erb:53
+app/views/products/_form.html.erb:52
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:3
+Started GET "/products/new" for ::1 at 2022-05-26 19:26:59 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 2.7ms | Allocations: 650)
+  Rendered products/_category_fields.html.erb (Duration: 2.4ms | Allocations: 645)
+  Rendered products/_form.html.erb (Duration: 17.7ms | Allocations: 4878)
+  Rendered products/new.html.erb within layouts/application (Duration: 23.3ms | Allocations: 5271)
+  Rendered shared/_navbar2.html.erb (Duration: 2.6ms | Allocations: 537)
+  Rendered shared/_footer.html.erb (Duration: 1.8ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 64.7ms | Allocations: 9879)
+Completed 200 OK in 100ms (Views: 84.5ms | ActiveRecord: 0.3ms | Allocations: 12885)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Feature (20220526234611)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220526234611"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to MFeature (20220526235040)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220526235040"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products/new" for ::1 at 2022-05-26 21:33:47 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (125.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 3.0ms | Allocations: 673)
+  Rendered products/_category_fields.html.erb (Duration: 3.6ms | Allocations: 638)
+  Rendered products/_form.html.erb (Duration: 45.0ms | Allocations: 4950)
+  Rendered products/new.html.erb within layouts/application (Duration: 55.2ms | Allocations: 5343)
+  Rendered shared/_navbar2.html.erb (Duration: 13.3ms | Allocations: 543)
+  Rendered shared/_footer.html.erb (Duration: 10.6ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 387.0ms | Allocations: 28300)
+Completed 200 OK in 2271ms (Views: 507.5ms | ActiveRecord: 1167.1ms | Allocations: 43209)
+
+
+  [1m[35m (74.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMFeatures (20220527013800)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (760.7ms)[0m  [1m[35mCREATE TABLE "m_features" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (16.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220527013800"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRefToMFeatur (20220527013931)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.6ms)[0m  [1m[35mALTER TABLE "m_features" ADD "product_id" bigint NOT NULL[0m
+  [1m[35m (58.3ms)[0m  [1m[35mCREATE INDEX "index_m_features_on_product_id" ON "m_features" ("product_id")[0m
+  [1m[35m (55.6ms)[0m  [1m[35mALTER TABLE "m_features" ADD CONSTRAINT "fk_rails_382f85ce6a"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220527013931"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRefToMFeatur (20220527013931)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (243.1ms)[0m  [1m[35mALTER TABLE "m_features" DROP CONSTRAINT "fk_rails_382f85ce6a"[0m
+  [1m[35m (33.0ms)[0m  [1m[35mALTER TABLE "m_features" DROP COLUMN "product_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (27.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220527013931"]]
+  [1m[36mTRANSACTION (12.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMFeatures (20220527013800)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.1ms)[0m  [1m[35mDROP TABLE "m_features"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220527013800"]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMFeatures (20220527015014)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (107.7ms)[0m  [1m[35mCREATE TABLE "m_features" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220527015014"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRefToMFeature (20220527015056)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "m_features" ADD "product_id" bigint NOT NULL[0m
+  [1m[35m (46.5ms)[0m  [1m[35mCREATE INDEX "index_m_features_on_product_id" ON "m_features" ("product_id")[0m
+  [1m[35m (10.2ms)[0m  [1m[35mALTER TABLE "m_features" ADD CONSTRAINT "fk_rails_382f85ce6a"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220527015056"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3901195379199505170)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products/new" for ::1 at 2022-05-26 21:58:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 2.2ms | Allocations: 671)
+  Rendered products/_category_fields.html.erb (Duration: 3.7ms | Allocations: 638)
+  Rendered products/_m_feature_fields.html.erb (Duration: 2.5ms | Allocations: 707)
+  Rendered products/_form.html.erb (Duration: 57.6ms | Allocations: 8807)
+  Rendered products/new.html.erb within layouts/application (Duration: 63.4ms | Allocations: 9205)
+  Rendered shared/_navbar2.html.erb (Duration: 2.0ms | Allocations: 543)
+  Rendered shared/_footer.html.erb (Duration: 2.0ms | Allocations: 183)
+  Rendered layout layouts/application.html.erb (Duration: 170.1ms | Allocations: 32208)
+Completed 200 OK in 234ms (Views: 159.2ms | ActiveRecord: 33.3ms | Allocations: 44691)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 21:59:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 5.1ms | Allocations: 794)
+  Rendered products/_category_fields.html.erb (Duration: 3.4ms | Allocations: 647)
+  Rendered products/_m_feature_fields.html.erb (Duration: 4.8ms | Allocations: 707)
+  Rendered products/_form.html.erb (Duration: 242.5ms | Allocations: 10745)
+  Rendered products/new.html.erb within layouts/application (Duration: 292.1ms | Allocations: 11494)
+  Rendered shared/_navbar2.html.erb (Duration: 2.0ms | Allocations: 565)
+  Rendered shared/_footer.html.erb (Duration: 1.7ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 2732.0ms | Allocations: 93524)
+Completed 200 OK in 3366ms (Views: 2819.9ms | ActiveRecord: 34.1ms | Allocations: 123429)
+
+
+Started GET "/" for ::1 at 2022-05-26 21:59:52 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Count (27.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mProduct Load (19.1ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 360.4ms | Allocations: 32575)
+  Rendered shared/_navbar2.html.erb (Duration: 0.5ms | Allocations: 164)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 385.8ms | Allocations: 36090)
+Completed 200 OK in 695ms (Views: 341.9ms | ActiveRecord: 47.1ms | Allocations: 45869)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 21:59:56 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 0.7ms | Allocations: 458)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 10.6ms | Allocations: 4340)
+  Rendered products/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4460)
+  Rendered shared/_navbar2.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 7885)
+Completed 200 OK in 46ms (Views: 34.8ms | ActiveRecord: 0.4ms | Allocations: 10064)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 22:02:28 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 1.1ms | Allocations: 493)
+  Rendered products/_category_fields.html.erb (Duration: 0.9ms | Allocations: 456)
+  Rendered products/_form.html.erb (Duration: 201.3ms | Allocations: 11469)
+  Rendered products/new.html.erb within layouts/application (Duration: 202.6ms | Allocations: 11576)
+  Rendered layout layouts/application.html.erb (Duration: 204.2ms | Allocations: 11665)
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 18.6ms | Allocations: 27022)
+
+
+  
+ActionView::Template::Error (Missing partial products/_m_features_fields, application/_m_features_fields with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/AOppen/Documents/GitHub/Trabajo/Curso/rails/boz4-master/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bootstrap4-kaminari-views-1.0.1/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/kaminari-core-1.2.2/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3/app/views"
+
+Did you mean?  products/m_feature_fields
+               products/category_fields
+               products/form
+               products/product
+               kaminari/first_page
+               kaminari/prev_page):
+    58:     </div>
+    59:     <div>
+    60:       <%= form.fields_for :m_features do |ff| %>
+    61:         <%= render "m_features_fields", :f => ff %>
+    62:       <%end%>
+    63:     </div>
+    64:     <div>
+  
+app/views/products/_form.html.erb:61
+app/views/products/_form.html.erb:60
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:3
+Started GET "/products/new" for ::1 at 2022-05-26 22:03:35 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 2.4ms | Allocations: 653)
+  Rendered products/_category_fields.html.erb (Duration: 3.2ms | Allocations: 638)
+  Rendered products/_m_feature_fields.html.erb (Duration: 2.1ms | Allocations: 658)
+  Rendered products/_m_feature_fields.html.erb (Duration: 2.9ms | Allocations: 635)
+  Rendered products/_form.html.erb (Duration: 28.4ms | Allocations: 6767)
+  Rendered products/new.html.erb within layouts/application (Duration: 35.8ms | Allocations: 7160)
+  Rendered shared/_navbar2.html.erb (Duration: 2.0ms | Allocations: 543)
+  Rendered shared/_footer.html.erb (Duration: 1.6ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 150.9ms | Allocations: 30159)
+Completed 200 OK in 185ms (Views: 168.3ms | ActiveRecord: 0.5ms | Allocations: 33407)
+
+
+Started GET "/admin" for ::1 at 2022-05-26 22:07:19 -0400
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms | Allocations: 599)
+
+
+Started GET "/admin/login" for ::1 at 2022-05-26 22:07:20 -0400
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/devise/shared/_links.erb (Duration: 68.5ms | Allocations: 849)
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 610.5ms | Allocations: 11940)
+  Rendered layout C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 818.1ms | Allocations: 28004)
+Completed 200 OK in 975ms (Views: 831.7ms | ActiveRecord: 6.2ms | Allocations: 32316)
+
+
+Started POST "/admin/login" for ::1 at 2022-05-26 22:07:26 -0400
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mAdminUser Load (5.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/admin
+Completed 302 Found in 549ms (ActiveRecord: 5.9ms | Allocations: 5350)
+
+
+Started GET "/admin" for ::1 at 2022-05-26 22:07:27 -0400
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/page/index.html.arb
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/page/index.html.arb (Duration: 107.7ms | Allocations: 21472)
+Completed 200 OK in 261ms (Views: 118.0ms | ActiveRecord: 0.4ms | Allocations: 24804)
+
+
+Started GET "/admin/m_features" for ::1 at 2022-05-26 22:07:33 -0400
+Processing by Admin::MFeaturesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/resource/index.html.arb
+  [1m[36mMFeature Load (3.3ms)[0m  [1m[34mSELECT "m_features".* FROM "m_features" ORDER BY "m_features"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/resource/index.html.arb (Duration: 692.8ms | Allocations: 47312)
+Completed 200 OK in 726ms (Views: 706.8ms | ActiveRecord: 4.4ms | Allocations: 50988)
+
+
+Started GET "/admin/categories" for ::1 at 2022-05-26 22:07:37 -0400
+Processing by Admin::CategoriesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/resource/index.html.arb
+  [1m[36mCategory Load (3.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/activeadmin-2.13.0/app/views/active_admin/resource/index.html.arb (Duration: 122.5ms | Allocations: 41540)
+Completed 200 OK in 152ms (Views: 133.6ms | ActiveRecord: 4.3ms | Allocations: 44904)
+
+
+Started POST "/products" for ::1 at 2022-05-26 22:08:16 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms | Allocations: 845)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.3) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.3) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.3) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.3) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/products/new" for ::1 at 2022-05-26 22:08:17 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 1.4ms | Allocations: 459)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 450)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 16.4ms | Allocations: 4765)
+  Rendered products/new.html.erb within layouts/application (Duration: 17.3ms | Allocations: 4885)
+  Rendered shared/_navbar2.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 8332)
+Completed 200 OK in 61ms (Views: 47.6ms | ActiveRecord: 0.4ms | Allocations: 10549)
+
+
+Started POST "/products" for ::1 at 2022-05-26 22:08:48 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:33:in `block in create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:33:in `block in create'
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:33:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 0.6ms | Allocations: 481)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.0ms | Allocations: 470)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 15.0ms | Allocations: 6240)
+  Rendered products/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 6367)
+  Rendered shared/_navbar2.html.erb (Duration: 0.9ms | Allocations: 164)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 9912)
+Completed 422 Unprocessable Entity in 409ms (Views: 44.8ms | ActiveRecord: 20.2ms | Allocations: 24934)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 22:13:16 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 18.5ms | Allocations: 16933)
+
+
+  
+NameError (uninitialized constant ProductsController::M_feature
+Did you mean?  MFeature):
+  
+app/controllers/products_controller.rb:22:in `new'
+Started GET "/products/new" for ::1 at 2022-05-26 22:13:39 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 0.7ms | Allocations: 493)
+  Rendered products/_category_fields.html.erb (Duration: 1.2ms | Allocations: 456)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 469)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 453)
+  Rendered products/_form.html.erb (Duration: 13.9ms | Allocations: 5130)
+  Rendered products/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 5266)
+  Rendered shared/_navbar2.html.erb (Duration: 0.7ms | Allocations: 187)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 122.5ms | Allocations: 27312)
+Completed 200 OK in 195ms (Views: 127.7ms | ActiveRecord: 19.5ms | Allocations: 42736)
+
+
+Started POST "/products" for ::1 at 2022-05-26 22:13:44 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:35:in `block in create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:35:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 0.7ms | Allocations: 477)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.3ms | Allocations: 470)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.0ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 15.0ms | Allocations: 5913)
+  Rendered products/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 6033)
+  Rendered shared/_navbar2.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | Allocations: 9464)
+Completed 422 Unprocessable Entity in 67ms (Views: 41.3ms | ActiveRecord: 1.2ms | Allocations: 17670)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 22:17:54 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 1.0ms | Allocations: 493)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 456)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 469)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 453)
+  Rendered products/_form.html.erb (Duration: 16.0ms | Allocations: 5117)
+  Rendered products/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 5253)
+  Rendered shared/_navbar2.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 130.7ms | Allocations: 27143)
+Completed 200 OK in 206ms (Views: 135.7ms | ActiveRecord: 19.3ms | Allocations: 42513)
+
+
+Started POST "/products" for ::1 at 2022-05-26 22:18:00 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:35:in `block in create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:35:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 0.6ms | Allocations: 477)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 470)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.7ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 15.0ms | Allocations: 5913)
+  Rendered products/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 6033)
+  Rendered shared/_navbar2.html.erb (Duration: 0.5ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 9442)
+Completed 422 Unprocessable Entity in 67ms (Views: 41.1ms | ActiveRecord: 1.4ms | Allocations: 17670)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 22:59:55 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 1.4ms | Allocations: 493)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 456)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 469)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.0ms | Allocations: 453)
+  Rendered products/_form.html.erb (Duration: 15.3ms | Allocations: 5123)
+  Rendered products/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 5259)
+  Rendered shared/_navbar2.html.erb (Duration: 0.8ms | Allocations: 187)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 133.0ms | Allocations: 27310)
+Completed 200 OK in 358ms (Views: 137.1ms | ActiveRecord: 25.1ms | Allocations: 43765)
+
+
+Started POST "/products" for ::1 at 2022-05-26 23:00:01 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x000002371f2c9f90>, params: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"create"} }[0m
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x000002371f2c9f90>, params: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 1.3ms | Allocations: 477)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.1ms | Allocations: 470)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 16.3ms | Allocations: 5913)
+  Rendered products/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 6033)
+  Rendered shared/_navbar2.html.erb (Duration: 0.9ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 9461)
+Completed 422 Unprocessable Entity in 77ms (Views: 46.9ms | ActiveRecord: 1.5ms | Allocations: 17985)
+
+
+Started POST "/products" for ::1 at 2022-05-26 23:05:11 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>""}, "commit"=>"enviar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mProduct Create (88.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "desciption", "price", "cost", "t_schedule", "stock", "img_url", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Ariel "], ["desciption", ""], ["price", nil], ["cost", nil], ["t_schedule", 22], ["stock", nil], ["img_url", ""], ["created_at", "2022-05-27 03:05:11.889590"], ["updated_at", "2022-05-27 03:05:11.889590"], ["user_id", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+Redirected to http://[::1]:3000/products/98
+Completed 302 Found in 117ms (ActiveRecord: 91.6ms | Allocations: 5700)
+
+
+Started GET "/products/98" for ::1 at 2022-05-26 23:05:12 -0400
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"98"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:72:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 18.5ms | Allocations: 490)
+  Rendered products/show.html.erb within layouts/application (Duration: 133.1ms | Allocations: 1696)
+  Rendered shared/_navbar2.html.erb (Duration: 0.5ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 158.2ms | Allocations: 5234)
+Completed 200 OK in 380ms (Views: 160.3ms | ActiveRecord: 3.0ms | Allocations: 15058)
+
+
+Started GET "/products/98/edit" for ::1 at 2022-05-26 23:05:15 -0400
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"98"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:72:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (26.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."product_id" = $1[0m  [["product_id", 98]]
+  ↳ app/views/products/_form.html.erb:52
+  Rendered products/_category_fields.html.erb (Duration: 0.9ms | Allocations: 458)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  [1m[36mMFeature Load (2.6ms)[0m  [1m[34mSELECT "m_features".* FROM "m_features" WHERE "m_features"."product_id" = $1[0m  [["product_id", 98]]
+  ↳ app/views/products/_form.html.erb:60
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.3ms | Allocations: 450)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 52.9ms | Allocations: 7880)
+  Rendered products/edit.html.erb within layouts/application (Duration: 56.9ms | Allocations: 8237)
+  Rendered shared/_navbar2.html.erb (Duration: 0.3ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 78.6ms | Allocations: 11651)
+Completed 200 OK in 99ms (Views: 51.4ms | ActiveRecord: 30.1ms | Allocations: 14581)
+
+
+Started PATCH "/products/98" for ::1 at 2022-05-26 23:05:29 -0400
+Processing by ProductsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"lo", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"los", "_destroy"=>"false"}}}, "commit"=>"enviar", "id"=>"98"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:72:in `set_product'
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: update, request: #<ActionDispatch::Request:0x0000023720253010>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"lo", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"los", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"update", "id"=>"98"} }[0m
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: update, request: #<ActionDispatch::Request:0x0000023720253010>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"lo", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"los", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"update", "id"=>"98"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."product_id" = $1[0m  [["product_id", 98]]
+  ↳ app/views/products/_form.html.erb:52
+  Rendered products/_category_fields.html.erb (Duration: 1.1ms | Allocations: 476)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  [1m[36mMFeature Load (0.4ms)[0m  [1m[34mSELECT "m_features".* FROM "m_features" WHERE "m_features"."product_id" = $1[0m  [["product_id", 98]]
+  ↳ app/views/products/_form.html.erb:60
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.2ms | Allocations: 468)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 22.3ms | Allocations: 7195)
+  Rendered products/edit.html.erb within layouts/application (Duration: 23.4ms | Allocations: 7362)
+  Rendered shared/_navbar2.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 10771)
+Completed 422 Unprocessable Entity in 79ms (Views: 46.9ms | ActiveRecord: 3.0ms | Allocations: 17327)
+
+
+Started PATCH "/products/98" for ::1 at 2022-05-26 23:06:25 -0400
+Processing by ProductsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"lo", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"los", "_destroy"=>"false"}}}, "commit"=>"enviar", "id"=>"98"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:72:in `set_product'
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: update, request: #<ActionDispatch::Request:0x0000023720d88b38>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"lo", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"los", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"update", "id"=>"98"} }[0m
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: update, request: #<ActionDispatch::Request:0x0000023720d88b38>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"lo", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"los", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"update", "id"=>"98"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."product_id" = $1[0m  [["product_id", 98]]
+  ↳ app/views/products/_form.html.erb:52
+  Rendered products/_category_fields.html.erb (Duration: 1.0ms | Allocations: 476)
+  Rendered products/_category_fields.html.erb (Duration: 0.9ms | Allocations: 455)
+  [1m[36mMFeature Load (0.5ms)[0m  [1m[34mSELECT "m_features".* FROM "m_features" WHERE "m_features"."product_id" = $1[0m  [["product_id", 98]]
+  ↳ app/views/products/_form.html.erb:60
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.5ms | Allocations: 468)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 23.5ms | Allocations: 7186)
+  Rendered products/edit.html.erb within layouts/application (Duration: 24.6ms | Allocations: 7353)
+  Rendered shared/_navbar2.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 47.2ms | Allocations: 10762)
+Completed 422 Unprocessable Entity in 78ms (Views: 47.9ms | ActiveRecord: 2.6ms | Allocations: 17212)
+
+

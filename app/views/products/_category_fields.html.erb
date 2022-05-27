@@ -1,9 +1,10 @@
+<h3>Categoria</h3>
 <div class="nested-fields">
-  <div>
-    <%= f.label :name, value:"Nombre Categoria", style: "display: block" %>
-    <%= f.text_field :name %>
+    <div>
+      <%= f.label :name, value:"Nombre Categoria", style: "display: block" %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= link_to_remove_association "Eliminar categoria", f %>
+    </div>
   </div>
-  <div>
-    <%= link_to_remove_association "Eliminar categoria", f %>
-  </div>
-</div>

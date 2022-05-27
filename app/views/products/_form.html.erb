@@ -57,6 +57,14 @@
       <%= link_to_add_association 'Añadir categorias', form, :categories %>
     </div>
     <div>
+      <%= form.fields_for :m_features do |ff| %>
+        <%= render "m_feature_fields", :f => ff %>
+      <%end%>
+    </div>
+    <div>
+      <%= link_to_add_association 'Añadir caracteristicas', form, :m_features %>
+    </div>
+    <div>
       <%= form.submit "enviar" , class:"btn btn-boz"%>
     </div>
   </div>
