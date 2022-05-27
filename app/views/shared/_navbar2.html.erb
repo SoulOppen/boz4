@@ -24,8 +24,10 @@
           </a>
              <!-- ¡Pending implementation! Should work toggling between sign_in and sign_out -->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li class="dropdown-item"><%=link_to 'Nuevo producto', new_product_path,class: "lk-boz" %></li>
-            <li class="dropdown-item"><%=link_to 'Mis productos', products_path,class: "lk-boz" %></li>
+            <%if current_user.role=="seller"%>
+              <li class="dropdown-item"><%=link_to 'Nuevo producto', new_product_path,class: "lk-boz" %></li>
+              <li class="dropdown-item"><%=link_to 'Mis productos', products_path,class: "lk-boz" %></li>
+            <%end%>
             <li class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete,class: "lk-boz"%></li>
           </ul>
         </li>

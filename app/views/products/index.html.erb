@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+
 
 <h1>Productos</h1>
 <br>
@@ -9,7 +9,7 @@
         <%if current_user.role=="seller"%>
                
                 <%= link_to "New product", new_product_path, class:"btn btn-boz  justify-content-start col-2 "%>
-        <%else%>
+        
         <%end%>
     </div>
     <div class="col-5 d-flex justify-content-end ">

@@ -25,8 +25,12 @@ puts "Poblando Datos..."
 		t_schedule: rand(2..6),
 		stock: rand(1..10),
 		img_url: "https://loremflickr.com/#{rand(50..200)}/#{rand(50..200)}/all",
-		user_id: 1
+		user_id: rand(1..3)
   	)
 end
 # Esto no es lo mejor solo para efectos de pruebas
+User.create!(email: 'bat@example.com', password: '123456', password_confirmation: '1123456', role:'seller')
+User.create!(email: 'super@example.com', password: '123456', password_confirmation: '1123456', role:'seller')
+User.create!(email: 'green@example.com', password: '123456', password_confirmation: '1123456', role:'seller')
+User.create!(email: 'aqua@example.com', password: '123456', password_confirmation: '1123456', role:'buyer') 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
