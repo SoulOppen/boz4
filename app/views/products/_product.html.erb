@@ -29,6 +29,22 @@
 
   <p>
     <strong>Stock: </strong><%= product.stock %> Unidad(es)
-  </p>
+    </p>
+    <%if product.categories.count>0%>
+    <p>
+    <strong>Caracteristica: </strong>
+      <%product.categories.each do |c|%>
+        <li class="mx-5"><%=c.name%></li>
+      <%end%>
+    </p>  
+  <%end%>
+  <%if product.m_features.count>0%>
+    <p>
+    <strong>Caracteristica: </strong>
+      <%product.m_features.each do |c|%>
+        <li class="mx-5"><%=c.name%></li>
+      <%end%>
+    </p>
+  <%end%>  
   </div>
 </div>
