@@ -2,8 +2,11 @@
 <%= render @product %>
 
 <div>
-  <%= link_to "Edit this product", edit_product_path(@product),class:"lk-boz" %> |
+  <%if prod.user_id==current_user.id%>
+    <%= link_to "Edit this product", edit_product_path(@product),class:"lk-boz" %> |
+  <%end%>  
   <%= link_to "Back to products", products_path,class:"lk-boz" %>
-
-  <%= button_to "Destroy this product", @product, method: :delete,class:"btn btn-boz" %>
+  <%if prod.user_id==current_user.id%>
+    <%= button_to "Destroy this product", @product, method: :delete,class:"btn btn-boz" %>
+  <%end%>
 </div>

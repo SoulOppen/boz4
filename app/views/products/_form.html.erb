@@ -50,7 +50,7 @@
     </div>
     <fieldset>
       <br>
-      <legend>Catedorias:</legend>
+      <legend>Categorias:</legend>
       <%= form.fields_for :categories do |ff| %>
         <%= render "category_fields", :f => ff %>
       <%end%>
@@ -60,7 +60,7 @@
     <br>
     </fieldset>
     <fieldset>
-    <br>
+      <br>
       <legend>Caracteristicas:</legend>
       <%= form.fields_for :m_features do |ff| %>
         <%= render "m_feature_fields", :f => ff %>
