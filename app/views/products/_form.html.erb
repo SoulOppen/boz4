@@ -48,27 +48,24 @@
       <%= form.label :img_url, style: "display: block" %>
       <%= form.text_field :img_url %>
     </div>
-    <fieldset>
-      <br>
-      <legend>Categorias:</legend>
+    <div>
+      <legend>Categoria:</legend>
       <%= form.fields_for :categories do |ff| %>
         <%= render "category_fields", :f => ff %>
       <%end%>
     </div>
-    <br>
+    <div>
       <%= link_to_add_association 'Añadir categorias', form, :categories %>
-    <br>
-    </fieldset>
-    <fieldset>
-      <br>
-      <legend>Caracteristicas:</legend>
+    </div>
+    <div>
+      <legend>Caracteristica:</legend>
       <%= form.fields_for :m_features do |ff| %>
         <%= render "m_feature_fields", :f => ff %>
       <%end%>
-      <br>
+    </div>
+    <div>
       <%= link_to_add_association 'Añadir caracteristicas', form, :m_features %>
-      <br>
-    </fieldset>
+    </div>
     <div>
       <%= form.submit "enviar" , class:"btn btn-boz"%>
     </div>
