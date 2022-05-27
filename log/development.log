@@ -37439,3 +37439,229 @@ Processing by ProductsController#update as TURBO_STREAM
 Completed 422 Unprocessable Entity in 78ms (Views: 47.9ms | ActiveRecord: 2.6ms | Allocations: 17212)
 
 
+Started GET "/products/98/edit" for ::1 at 2022-05-26 23:10:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"98"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (3.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:72:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (3.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."product_id" = $1[0m  [["product_id", 98]]
+  ↳ app/views/products/_form.html.erb:52
+  Rendered products/_category_fields.html.erb (Duration: 2.6ms | Allocations: 788)
+  Rendered products/_category_fields.html.erb (Duration: 2.5ms | Allocations: 647)
+  [1m[36mMFeature Load (3.4ms)[0m  [1m[34mSELECT "m_features".* FROM "m_features" WHERE "m_features"."product_id" = $1[0m  [["product_id", 98]]
+  ↳ app/views/products/_form.html.erb:60
+  Rendered products/_m_feature_fields.html.erb (Duration: 3.1ms | Allocations: 702)
+  Rendered products/_m_feature_fields.html.erb (Duration: 2.3ms | Allocations: 644)
+  Rendered products/_form.html.erb (Duration: 63.5ms | Allocations: 12063)
+  Rendered products/edit.html.erb within layouts/application (Duration: 72.1ms | Allocations: 12900)
+  Rendered shared/_navbar2.html.erb (Duration: 2.9ms | Allocations: 563)
+  Rendered shared/_footer.html.erb (Duration: 2.3ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 642.8ms | Allocations: 84524)
+Completed 200 OK in 850ms (Views: 665.5ms | ActiveRecord: 40.6ms | Allocations: 117912)
+
+
+Started PATCH "/products/98" for ::1 at 2022-05-26 23:11:06 -0400
+Processing by ProductsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"22", "t_schedule"=>"22", "stock"=>"", "img_url"=>"Postres", "categories_attributes"=>{"0"=>{"name"=>"", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"", "_destroy"=>"false"}}}, "commit"=>"enviar", "id"=>"98"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:72:in `set_product'
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: update, request: #<ActionDispatch::Request:0x000001c812be1b68>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"22", "t_schedule"=>"22", "stock"=>"", "img_url"=>"Postres", "categories_attributes"=>{"0"=>{"name"=>"", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"update", "id"=>"98"} }[0m
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: update, request: #<ActionDispatch::Request:0x000001c812be1b68>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"22", "t_schedule"=>"22", "stock"=>"", "img_url"=>"Postres", "categories_attributes"=>{"0"=>{"name"=>"", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"update", "id"=>"98"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  [1m[36mProduct Update (60.7ms)[0m  [1m[33mUPDATE "products" SET "cost" = $1, "img_url" = $2, "updated_at" = $3 WHERE "products"."id" = $4[0m  [["cost", 22], ["img_url", "Postres"], ["updated_at", "2022-05-27 03:11:07.053689"], ["id", 98]]
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:49:in `block in update'
+Redirected to http://[::1]:3000/products/98
+Completed 302 Found in 107ms (ActiveRecord: 64.2ms | Allocations: 9912)
+
+
+Started GET "/products/98" for ::1 at 2022-05-26 23:11:07 -0400
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"98"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:72:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 24.9ms | Allocations: 3745)
+  Rendered products/show.html.erb within layouts/application (Duration: 34.0ms | Allocations: 4557)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 4645)
+Completed 500 Internal Server Error in 307ms (ActiveRecord: 1.0ms | Allocations: 14244)
+
+
+  
+ActionView::Template::Error (The asset "Postres" is not present in the asset pipeline.
+):
+    1: <div  id="<%= dom_id product %>" >
+    2:   <div>
+    3:     <%=image_tag product.img_url, class:"sz"%>
+    4:   </div>
+    5:   <div class="card-body">
+    6:   <p>
+  
+app/views/products/_product.html.erb:3
+app/views/products/show.html.erb:4
+Started GET "/products/98" for ::1 at 2022-05-26 23:11:27 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"98"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:72:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 17.2ms | Allocations: 2642)
+  Rendered products/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 2765)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 2848)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.9ms | Allocations: 5491)
+
+
+  
+ActionView::Template::Error (The asset "Postres" is not present in the asset pipeline.
+):
+    1: <div  id="<%= dom_id product %>" >
+    2:   <div>
+    3:     <%=image_tag product.img_url, class:"sz"%>
+    4:   </div>
+    5:   <div class="card-body">
+    6:   <p>
+  
+app/views/products/_product.html.erb:3
+app/views/products/show.html.erb:4
+Started GET "/products/new" for ::1 at 2022-05-26 23:11:32 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 0.6ms | Allocations: 461)
+  Rendered products/_category_fields.html.erb (Duration: 1.2ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 450)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 14.9ms | Allocations: 4893)
+  Rendered products/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 5224)
+  Rendered shared/_navbar2.html.erb (Duration: 0.9ms | Allocations: 167)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 8791)
+Completed 200 OK in 62ms (Views: 43.9ms | ActiveRecord: 0.5ms | Allocations: 11448)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 23:11:33 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 0.6ms | Allocations: 458)
+  Rendered products/_category_fields.html.erb (Duration: 0.9ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.0ms | Allocations: 450)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 12.6ms | Allocations: 4732)
+  Rendered products/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4852)
+  Rendered shared/_navbar2.html.erb (Duration: 0.4ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 8269)
+Completed 200 OK in 54ms (Views: 41.0ms | ActiveRecord: 0.4ms | Allocations: 10504)
+
+
+Started POST "/products" for ::1 at 2022-05-26 23:11:40 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x000001c811f1aba0>, params: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"create"} }[0m
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x000001c811f1aba0>, params: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 1.0ms | Allocations: 478)
+  Rendered products/_category_fields.html.erb (Duration: 0.7ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 470)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 15.8ms | Allocations: 6139)
+  Rendered products/new.html.erb within layouts/application (Duration: 16.7ms | Allocations: 6259)
+  Rendered shared/_navbar2.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 9669)
+Completed 422 Unprocessable Entity in 71ms (Views: 43.2ms | ActiveRecord: 1.5ms | Allocations: 16721)
+
+
+Started POST "/products" for ::1 at 2022-05-26 23:12:13 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x000001c8123ef9f0>, params: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"create"} }[0m
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x000001c8123ef9f0>, params: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 0.7ms | Allocations: 476)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.4ms | Allocations: 469)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 16.6ms | Allocations: 5887)
+  Rendered products/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 6007)
+  Rendered shared/_navbar2.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 9421)
+Completed 422 Unprocessable Entity in 71ms (Views: 44.9ms | ActiveRecord: 1.3ms | Allocations: 15008)
+
+
+Started GET "/products/new" for ::1 at 2022-05-26 23:44:11 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 1.2ms | Allocations: 493)
+  Rendered products/_category_fields.html.erb (Duration: 1.4ms | Allocations: 456)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.0ms | Allocations: 469)
+  Rendered products/_m_feature_fields.html.erb (Duration: 1.3ms | Allocations: 453)
+  Rendered products/_form.html.erb (Duration: 15.4ms | Allocations: 5129)
+  Rendered products/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 5265)
+  Rendered shared/_navbar2.html.erb (Duration: 0.7ms | Allocations: 187)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 133.0ms | Allocations: 27318)
+Completed 200 OK in 333ms (Views: 137.6ms | ActiveRecord: 23.2ms | Allocations: 43849)
+
+
+Started POST "/products" for ::1 at 2022-05-26 23:44:19 -0400
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x000001c80e2c0510>, params: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"create"} }[0m
+[31mUnpermitted parameter: :_destroy. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x000001c80e2c0510>, params: {"authenticity_token"=>"[FILTERED]", "product"=>{"user_id"=>"1", "name"=>"Ariel ", "desciption"=>"", "price"=>"", "cost"=>"", "t_schedule"=>"22", "stock"=>"", "img_url"=>"", "categories_attributes"=>{"0"=>{"name"=>"Postres", "_destroy"=>"false"}}, "m_features_attributes"=>{"0"=>{"name"=>"Celiacos apto", "_destroy"=>"false"}}}, "commit"=>"enviar", "controller"=>"products", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:36:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_category_fields.html.erb (Duration: 1.1ms | Allocations: 477)
+  Rendered products/_category_fields.html.erb (Duration: 0.8ms | Allocations: 455)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.9ms | Allocations: 470)
+  Rendered products/_m_feature_fields.html.erb (Duration: 0.8ms | Allocations: 452)
+  Rendered products/_form.html.erb (Duration: 14.3ms | Allocations: 5914)
+  Rendered products/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 6034)
+  Rendered shared/_navbar2.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 9443)
+Completed 422 Unprocessable Entity in 72ms (Views: 41.8ms | ActiveRecord: 1.4ms | Allocations: 17949)
+
+
