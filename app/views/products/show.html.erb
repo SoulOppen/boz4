@@ -1,12 +1,11 @@
 <h1>Mostrar</h1>
 <%= render @product %>
-
 <div>
-  <%if prod.user_id==current_user.id%>
+  <%if @product.user_id==current_user.id%>
     <%= link_to "Edit this product", edit_product_path(@product),class:"lk-boz" %> |
   <%end%>  
   <%= link_to "Back to products", products_path,class:"lk-boz" %>
-  <%if prod.user_id==current_user.id%>
+  <%if @product.user_id==current_user.id%>
     <%= button_to "Destroy this product", @product, method: :delete,class:"btn btn-boz" %>
   <%end%>
 </div>
