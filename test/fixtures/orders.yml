@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  d_order: 2022-06-01
+  score: 1
+  send: MyString
+
+two:
+  d_order: 2022-06-01
+  score: 1
+  send: MyString

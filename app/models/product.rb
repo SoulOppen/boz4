@@ -5,5 +5,7 @@ class Product < ApplicationRecord
     accepts_nested_attributes_for :categories, reject_if: :all_blank, allow_destroy: true
     has_many :m_features, dependent: :destroy
     accepts_nested_attributes_for :m_features, reject_if: :all_blank, allow_destroy: true
-   
+    has_many :details
+    has_many :orders, through: :details, dependent: :destroy
+
 end

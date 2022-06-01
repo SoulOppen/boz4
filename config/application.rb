@@ -38,6 +38,6 @@ I18n.default_locale = :es
     config.i18n.available_locales = [:en, :es]
     config.i18n.default_locale = :es
     config.i18n.fallbacks = true
-
+    config.app_generators.scaffold_controller = :scaffold_controller
   end
 end
