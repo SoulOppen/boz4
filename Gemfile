@@ -97,3 +97,4 @@ gem "cocoon"
 # gem "sassc-rails"
 gem "sass-rails"
 gem 'formtastic'
+gem "image_processing"
