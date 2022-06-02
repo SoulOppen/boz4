@@ -2,8 +2,9 @@
   <div>
     <%=image_tag product.img_url, class:"sz"%>
   </div>
+  <br>
   <div>
-  <%= image_tag product.images.last.variant(resize: "50x50")%>
+    <%= image_tag product.images.last, size: "50"%>
   </div>
   <div class="card-body">
   <p>

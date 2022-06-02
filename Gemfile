@@ -97,4 +97,7 @@ gem "cocoon"
 # gem "sassc-rails"
 gem "sass-rails"
 gem 'formtastic'
-gem "image_processing"
+#gem "image_processing"
+gem "mini_magick"
+gem "aws-sdk-s3"
+gem 'dotenv-rails', groups: [:development, :test]
