@@ -4,7 +4,11 @@
   </div>
   <br>
   <div>
-    <%= image_tag product.images.last, size: "50"%>
+    <%if product.images.count>0%>
+      <%product.images.each do |image|%>
+        <%= image_tag image, size: "50"%>
+      <%end%>
+    <%end%>
   </div>
   <div class="card-body">
   <p>
